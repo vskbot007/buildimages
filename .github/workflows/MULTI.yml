@@ -13,13 +13,13 @@ jobs:
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}  
       run: |
         docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-    - name: docker build nodejs
+    - name: docker build alpine
       run: |
-        docker build ./nodejs -t aimvector/nodejs:1.0.0
-    - name: docker build python
+        docker build ./alpine/Dockerfile
+    - name: docker build NGINX
       run: |
-        docker build ./python -t aimvector/python:1.0.0
+        docker build ./NGINX/Dockerfile
     - name: docker push
       run: |
-        docker push aimvector/nodejs:1.0.0
-        docker push aimvector/python:1.0.0
+        docker push ./alpine/Dockerfile
+        docker push ./NGINX/Dockerfile
