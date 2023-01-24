@@ -15,9 +15,9 @@ jobs:
       matrix:
         include:
           - dockerfile: NGINX/Dockerfile
-            image: ghcr.io/vskbot007/image1
+            image: vskbot007/image1
           - dockerfile: alpine/Dockerfile
-            image: ghcr.io/vskbot007/image2
+            image: vskbot007/image2
     permissions:
       contents: read
       packages: write
